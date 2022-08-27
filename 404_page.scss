@@ -1,0 +1,245 @@
+@import "default.scss";
+
+
+.F04-wrapper {
+	@include makeFullSizeBlock();
+	position: fixed;
+	overflow: hidden;
+	height: 100vh;
+	top: 0;
+	@include makeColFlexCenter();
+
+	.F04-div {
+		height: 50%;
+		@include makeFullWidthBlock();
+		@include makeRowFlexCenter();
+		overflow: hidden;
+
+		svg {
+			height: 100%;
+		}
+	}
+
+	.F04-message {
+		@include makeFullWidthBlock();
+		text-align: center;
+		height: max-content;
+		font-size: 2rem;
+		font-weight: 900;
+		color: $accentColor;
+
+	}
+}
+
+.alert-popup {
+	position: fixed;
+	left: 3rem;
+	top: 70%;
+	width: 25rem;
+	height: 4rem;
+
+	border-top-left-radius: 3rem;
+	@include makeColFlexCenter();
+
+	p {
+		color: $lightBGColor;
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		font-weight: 700;
+	}
+
+	&::after {
+		@include makeAbsoluteBottomLeftDiv();
+		width: 45%;
+		height: .1rem;
+		
+		bottom: -1rem;
+	}
+
+
+	&.failure-popup {
+		border: .1rem solid #FF0707;
+		background-color: #c10f0f28;
+		box-shadow: 0 1rem 2rem #64646467, inset 0rem .5rem 1rem #ffeaea4f;
+		&::after {
+			background-color: red;
+		}
+	}
+	
+	&.success-popup {
+		border: .1rem solid #07FF87;
+			background-color: #0fc13f23;
+			box-shadow: 0 1rem 2rem #64646467, inset 0rem .5rem 1rem #ffeaea4f;
+			&::after{
+				background-color: green;
+			}
+	}
+}
+
+
+
+
+
+// LOADER COMPONENT
+$squarew: 1.5rem;
+$squareh: 1.5rem;
+$squaremargin: .5rem;
+$loaderw: $squarew * 3 + $squaremargin *2;
+$loaderh: $squareh * 3 + $squaremargin *2;
+$delayenter: 0.3s;
+$topenter: -1rem;
+
+@mixin transition($value) {
+	-webkit-transition: $value ;
+	-moz-transition: $value ;
+	transition: $value ;
+}
+
+@mixin delay($delay ) {
+	-webkit-animation-delay: $delay;
+	-moz-animation-delay: $delay;
+	animation-delay: $delay;
+}
+
+@-webkit-keyframes enter {
+	0% {
+		opacity: 0;
+		top: $topenter;
+	}
+
+	5% {
+		opacity: 1;
+		top: 0rem;
+	}
+
+	50.9% {
+		opacity: 1;
+		top: 0rem;
+	}
+
+	55.9% {
+		opacity: 0;
+		top: - $topenter;
+	}
+}
+
+@keyframes enter {
+	0% {
+		opacity: 0;
+		top: $topenter;
+	}
+
+	5% {
+		opacity: 1;
+		top: 0rem;
+	}
+
+	50.9% {
+		opacity: 1;
+		top: 0rem;
+	}
+
+	55.9% {
+		opacity: 0;
+		top: - $topenter;
+	}
+}
+
+@-moz-keyframes enter {
+	0% {
+		opacity: 0;
+		top: $topenter;
+	}
+
+	5% {
+		opacity: 1;
+		top: 0rem;
+	}
+
+	50.9% {
+		opacity: 1;
+		top: 0rem;
+	}
+
+	55.9% {
+		opacity: 0;
+		top: - $topenter;
+	}
+}
+
+
+.loader-div{
+	background-color: $checkoutModalShadowColor;
+	position: fixed;
+	height: 100vh;
+	@include makeFullWidthBlock();
+	top: 0;
+	.loader {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: - $loaderw / 2;
+			margin-top: - $loaderh / 2;
+		}
+	
+		.square {
+			background: $accentColor;
+			width: $squarew;
+			height: $squareh;
+			float: left;
+			top: $topenter;
+			margin-right: $squaremargin;
+			margin-top: $squaremargin;
+			position: relative;
+			opacity: 0;
+			-webkit-animation: enter 6s infinite;
+			animation: enter 6s infinite;
+		}
+	
+		.enter {
+			top: 0rem;
+			opacity: 1;
+		}
+	
+		.square:nth-child(1) {
+			@include delay(6 * $delayenter);
+		}
+	
+		.square:nth-child(2) {
+			@include delay(7 * $delayenter);
+		}
+	
+		.square:nth-child(3) {
+			@include delay(8 * $delayenter);
+			background: $lightBGColor;
+		}
+	
+		.square:nth-child(4) {
+			@include delay(3 * $delayenter);
+		}
+	
+		.square:nth-child(5) {
+			@include delay(4 * $delayenter);
+		}
+	
+		.square:nth-child(6) {
+			@include delay(5 * $delayenter);
+		}
+	
+	
+		.square:nth-child(8) {
+			@include delay(1 * $delayenter);
+		}
+	
+		.square:nth-child(9) {
+			@include delay(2 * $delayenter);
+		}
+	
+		.clear {
+			clear: both;
+		}
+	
+		.last {
+			margin-right: 0;
+		}
+}
