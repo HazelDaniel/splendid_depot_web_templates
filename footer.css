@@ -1,0 +1,171 @@
+@font-face {
+  font-family: autography;
+  src: url("./FONTS/Autography.ttf"); }
+@font-face {
+  font-family: montserratRegular;
+  src: url("./FONTS/Montserrat-Regular.ttf"); }
+:root {
+  --darkTextColor: #000000;
+  --blurColor: #252525b7;
+  --lightCTATextColor: #E9E9E9;
+  --darkCTABackgroundColor: #000000dc;
+  --logoOutlineColor: #191919;
+  --homeNavTextColor: #393939;
+  --BodyColor: #E5D6CB;
+  --accentColor: #BB9D88;
+  --cartModalBorderColor: #5F5F5F;
+  --lightBGColor: #FFFFFF;
+  --collectionPriceTextColor: #707070;
+  --cartCTAColor: #E0E0E0;
+  --QTcountColor: #1E1E1E;
+  --checkoutCTAIconColor: #E3D4CB;
+  --checkoutCTAShadowColor: #6464647e;
+  --checkoutModalTitleColor: #171717;
+  --checkoutModalIconColor: #70655F;
+  --checkoutModalSelectBTNColor: #363535;
+  --checkoutModalPlaceholderColor: #A9A9A9;
+  --checkoutModalCursorColor: #494646;
+  --checkoutModalHeroColor: #E3D4CB;
+  --checkoutModalShadowColor: #0a0a0a88;
+  --checkoutModalOverlayColor: #000000;
+  --authMainTitleColor: #373737;
+  --authSubtitleColor: #6C6C6C;
+  --authTextColor: #808080;
+  --authSecondaryCTAColor: #2F6FE2; }
+
+footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  background-color: var(--accentColor);
+  padding: 0 1.5rem; }
+  footer::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 95%;
+    left: 2.5%;
+    right: 2.5%;
+    height: 4rem;
+    background-color: var(--BodyColor); }
+
+.footer-brand-div {
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: max-content;
+  margin-top: 8rem; }
+  .footer-brand-div .footer-logo-div {
+    height: 5rem;
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .footer-brand-div .footer-logo-div svg {
+      height: 100%;
+      margin-right: auto;
+      justify-self: flex-start;
+      scale: .8; }
+  .footer-brand-div .footer-brand-name {
+    height: 5rem;
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+    font-size: 2.5rem;
+    font-family: autography;
+    font-weight: 600;
+    color: #FFFFFF;
+    padding-left: 0.3rem; }
+
+.--footer-bottom-div {
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem 0;
+  border: .2rem solid #FFFFFF;
+  height: max-content;
+  min-height: 30rem;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 2rem; }
+
+.footer-tabs-div {
+  width: max-content;
+  min-width: 15rem;
+  margin: 4rem 3rem 0 0;
+  height: 80%; }
+
+.ftd-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  display: block;
+  height: 100%;
+  width: inherit; }
+
+.footer-tab {
+  background-color: var(--logoOutlineColor);
+  width: 20rem;
+  height: 3rem;
+  box-shadow: 0.1rem 0.2rem 0.3rem var(--logoOutlineColor);
+  font-size: 1.2rem;
+  text-transform: lowercase;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform .5s ease-out; }
+  .footer-tab.active {
+    border: .2rem solid #FFFFFF;
+    transform: translateX(8%); }
+
+.footer-display-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  padding-top: 2rem; }
+  .footer-display-div p {
+    display: block;
+    width: 100%;
+    font-family: montserratRegular;
+    color: var(--logoOutlineColor); }
+
+.ftd-title {
+  height: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  font-weight: bolder; }
+
+.ftd-text {
+  font-size: 1.2rem;
+  padding: 0 2rem;
+  text-align: center; }
+
+.copyright {
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  text-align: center; }
+
+/*# sourceMappingURL=footer.css.map */

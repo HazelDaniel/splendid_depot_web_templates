@@ -1,0 +1,176 @@
+@font-face {
+	font-family: autography;
+	src: url("./FONTS/Autography.ttf");
+}
+@font-face {
+	font-family: montserratRegular;
+	src: url("./FONTS/Montserrat-Regular.ttf");
+}
+
+@import "./functions";
+
+:root {
+	--darkTextColor: #000000;
+	--blurColor: #252525b7;
+	--lightCTATextColor: #E9E9E9;
+	--darkCTABackgroundColor: #000000dc;
+	--logoOutlineColor: #191919;
+	--homeNavTextColor: #393939;
+	--BodyColor: #E5D6CB;
+
+	--accentColor: #BB9D88;
+	--cartModalBorderColor: #5F5F5F;
+	--lightBGColor: #FFFFFF;
+	--collectionPriceTextColor: #707070;
+	--cartCTAColor: #E0E0E0;
+
+
+	--QTcountColor: #1E1E1E;
+	--checkoutCTAIconColor: #E3D4CB;
+	--checkoutCTAShadowColor: #6464647e;
+	--checkoutModalTitleColor: #171717;
+	--checkoutModalIconColor: #70655F;
+	--checkoutModalSelectBTNColor: #363535;
+	--checkoutModalPlaceholderColor: #A9A9A9;
+	--checkoutModalCursorColor: #494646;
+	--checkoutModalHeroColor: #E3D4CB;
+	--checkoutModalShadowColor: #0a0a0a88;
+	--checkoutModalOverlayColor: #000000;
+
+
+
+
+
+
+	--authMainTitleColor: #373737;
+	--authSubtitleColor: #6C6C6C;
+	--authTextColor: #808080;
+	--authSecondaryCTAColor: #2F6FE2;
+}
+
+footer {
+	@include makeColFlexStart();
+	position: relative;
+	background-color: var(--accentColor);
+	padding: 0 1.5rem;
+
+	&::before {
+		@include makeAbsoluteTopDiv();
+		width: 95%;
+		left: 2.5%;
+		right: 2.5%;
+		height: 4rem;
+		background-color: var(--BodyColor);
+		// background-color: transparent;
+
+	}
+}
+
+.footer-brand-div {
+	@include makeFullWidthBlock();
+	@include makeColFlexStart();
+	height: max-content;
+	margin-top: 8rem;
+	.footer-logo-div {
+		// copy the logo div style
+		height: 5rem;
+		@include makeFullWidthBlock();
+		@include makeRowFlexStart();
+		align-items: center;
+		svg{
+			height: 100%;
+			margin-right: auto;
+			justify-self: flex-start;
+			scale: .8;
+		}
+	}
+
+	.footer-brand-name {
+		height: 5rem;
+		@include makeFullWidthBlock();
+		@include makeRowFlex();
+		align-items: center;
+		text-align: start;
+		font-size: 2.5rem;
+		font-family: autography;
+		font-weight: 600;
+		color: #FFFFFF;
+		padding-left: .3rem
+	}
+
+}
+
+.--footer-bottom-div {
+	@include makeFullWidthBlock();
+	@include makeRowFlexCenter();
+	margin: 2rem 0;
+	border: .2rem solid #FFFFFF;
+	height: max-content;
+	min-height: 30rem;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	padding: 2rem;
+}
+
+.footer-tabs-div {
+	width: max-content;
+	min-width: 15rem;
+	margin: 4rem 3rem 0 0;
+	height: 80%;
+}
+
+.ftd-list {
+	list-style-type: none;
+	@include makeColFlexCenter();
+	@include makeFullHeightBlock();
+	width: inherit;
+}
+
+.footer-tab {
+	background-color: var(--logoOutlineColor);
+	width: 20rem;
+	height: 3rem;
+	box-shadow: .1rem .2rem .3rem var(--logoOutlineColor);
+	font-size: 1.2rem;
+	text-transform: lowercase;
+	color: #FFFFFF;
+	margin-bottom: 1rem;
+	@include makeColFlexCenter();
+	transition: transform .5s ease-out;
+
+	&.active {
+		border: .2rem solid #FFFFFF;
+		transform: translateX(8%);
+	}
+}
+
+.footer-display-div{
+	@include makeColFlexStart();
+	width: 70%;
+	padding-top: 2rem;
+	p{
+		@include makeFullWidthBlock();
+		font-family: montserratRegular;
+		// this should be a color that alternates between logo-outline color and white
+		color: var(--logoOutlineColor);
+	}
+}
+.ftd-title{
+	height: 4rem;
+	font-size: 2rem;
+	text-align: center;
+	font-weight: 500;
+	font-weight: bolder;
+}
+.ftd-text{
+	font-size: 1.2rem;
+	padding: 0 2rem;
+	text-align: center;
+}
+
+
+.copyright{
+	font-size: 1.5rem;
+	@include makeFullWidthBlock();
+	text-align: center;
+}
